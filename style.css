@@ -1,0 +1,76 @@
+/* Main Style */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+/* Set Images for each Image Card */
+#image1 {
+    background-image: url("IMG/Image1.jpg");
+}
+#image2 {
+    background-image: url("IMG/Image2.jpg");
+}
+#image3 {
+    background-image: url("IMG/Image3.jpg");
+}
+#image4 {
+    background-image: url("IMG/Image4.png");
+}
+#image5 {
+    background-image: url("IMG/Image5.jpg");
+}
+/* Image Card Design */
+.container {
+    display: flex;
+    width: 90vw;
+}
+.image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    -webkit-transition: all 700ms ease-in;
+}
+.image h3 {
+    background: black;
+    color: white;
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+.image.active {
+    flex: 5;
+}
+.image.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+/* Responsive Design */ 
+@media (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+    .image:nth-of-type(4),
+    .image:nth-of-type(5) {
+        display: none;
+    }
+}
